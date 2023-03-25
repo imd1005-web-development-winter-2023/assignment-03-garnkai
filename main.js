@@ -1,15 +1,24 @@
-//
-//  JS File
-//  You may remove the code below - it's just boilerplate
-//
+//variables
+const form = document.querySelector("#form");
+const list = document.querySelector("#list");
+const idkWhat = document.querySelector("#newToDo");
 
-//
-// Variables
-//
+form.addEventListener("submit", addToList);
 
-// Constants
-const appID = "app";
-const headingText = "To do. To done. ✅";
+//functions
+
+//adds a new to do to the list
+function addToList(event){
+  event.preventDefault();
+
+  const newToDo = document.createElement("li");
+  newToDo.textContent = `${idkWhat.value}`;
+  list.appendChild(newToDo);
+
+  form.reset();
+}
+
+
 
 // Variables
 
