@@ -2,10 +2,16 @@
 const form = document.querySelector("#form");
 const list = document.querySelector("#list");
 const newDo= document.querySelector("#newToDo");
+const doneList = document.querySelector("#doneList");
 let listToDo = [];
+let finishedToDo=[];
 let index;
+
 const getRid = document.querySelector("#list");
-getRid.addEventListener("click", remove);
+const removeIt = document.querySelector("#doneList");
+
+getRid.addEventListener("click", deleteToDo);
+removeIt.addEventListener("click", removeFinished);
 
 form.addEventListener("submit", addToList);
 
@@ -28,52 +34,37 @@ function addToList(event){
   listToDo.push(newBtn);
   listToDo.push(newToDo);
 
+  console.log(listToDo);
+
   form.reset();
 }
 
-function remove(event){
+function deleteToDo(event){
   index = listToDo.indexOf(event.target);
-  if (event.target.nodeName != "BUTTON"){
-    console.log(index);
+
+  if (event.target.nodeName == "LI"){
     event.target.remove();
     listToDo[index-1].remove();
   }
-  event.target.textContent = "✓";
-  event.target.classList.add("complete");
-  listToDo[index+1].classList.add("complete");
 
+  else if (event.target.nodeName == "BUTTON"){
+    finishedToDo.push(event.target);
+    finishedToDo.push(listToDo[index+1]);
 
-}
+    doneList.appendChild(event.target);
+    doneList.appendChild(listToDo[index+1]);
+  }
 
-
-// Variables
-
-// DOM Elements
-let appContainer = document.getElementById(appID);
-
-//
-// Functions
-//
-
-// Add a heading to the app container
-function inititialise() {
-  // If anything is wrong with the app container then end
-  if (!appContainer) {
-    console.error("Error: Could not find app contianer");
+  else{
     return;
   }
 
-  // Create an h1 and add it to our app
-  const h1 = document.createElement("h1");
-  h1.innerText = headingText;
-  appContainer.appendChild(h1);
-
-  // Init complete
-  console.log("App successfully initialised");
 }
 
-//
-// Inits & Event Listeners
-//
-
-inititialise();
+function removeFinished(event) {
+  index = finishedToDo.indexOf(event.target);
+  if (event.target.nodeName == "LI"){
+    event.target.remove();
+    finishedToDo[index-1].remove();
+  }
+}
