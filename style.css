@@ -75,6 +75,37 @@ main {
   border-radius: 2px;
 }
 
+ul{
+  list-style-type: none;
+}
+
+ul li:nth-child(odd){
+  display: flex;
+  padding: 2%;
+  border-radius: 6px;
+  background-color: #E2B6CF;
+  border: 2px solid #dda3c4;
+  margin: 0.5rem;
+
+}
+
+ul :hover{
+  text-decoration:line-through;
+}
+
+.buttonList {
+  background-color: #E2B6CF;
+  border: 2px solid #dda3c4;
+  border-radius: 2px;
+  margin-left: -2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.buttonList:hover{
+  background-color: #d97fb2;
+}
+
 /*
   Screen reader text utility class
 */

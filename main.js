@@ -17,7 +17,15 @@ function addToList(event){
   list.appendChild(newToDo);
 
   form.reset();
+
+  let newBtn = document.createElement("button");
+  newBtn.textContent =" ";
+  newBtn.className = "buttonList";
+
+  list.appendChild(newBtn);
+  
 }
+
 
 
 // Variables
