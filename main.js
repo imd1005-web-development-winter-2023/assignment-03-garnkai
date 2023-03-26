@@ -1,7 +1,10 @@
 //variables
 const form = document.querySelector("#form");
 const list = document.querySelector("#list");
-const idkWhat = document.querySelector("#newToDo");
+const newDo= document.querySelector("#newToDo");
+
+const getRid = document.querySelector("#list");
+getRid.addEventListener("click", remove);
 
 form.addEventListener("submit", addToList);
 
@@ -12,20 +15,29 @@ form.addEventListener("submit", addToList);
 function addToList(event){
   event.preventDefault();
 
-  const newToDo = document.createElement("li");
-  newToDo.textContent = `${idkWhat.value}`;
-  list.appendChild(newToDo);
-
-  form.reset();
-
   let newBtn = document.createElement("button");
   newBtn.textContent =" ";
   newBtn.className = "buttonList";
-
   list.appendChild(newBtn);
-  
+
+  const newToDo = document.createElement("li");
+  newToDo.textContent = `${newDo.value}`;
+  list.appendChild(newToDo);
+
+  form.reset();
 }
 
+function remove(event){
+  console.log("hello");
+  if (event.target.nodeName != "BUTTON"){
+    event.target.remove();
+  }
+
+  event.target.textContent = "✓";
+  event.target.classList.add("complete");
+
+
+}
 
 
 // Variables

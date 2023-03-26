@@ -76,17 +76,18 @@ main {
 }
 
 ul{
+  margin-top: 1.3rem;
   list-style-type: none;
 }
 
-ul li:nth-child(odd){
+ul li:nth-child(even){
   display: flex;
   padding: 2%;
   border-radius: 6px;
   background-color: #E2B6CF;
   border: 2px solid #dda3c4;
-  margin: 0.5rem;
-
+  margin-top: -2.5rem;
+  margin-bottom: 2rem;
 }
 
 ul :hover{
@@ -104,6 +105,17 @@ ul :hover{
 
 .buttonList:hover{
   background-color: #d97fb2;
+}
+
+.body button{
+  display: flex;
+  margin-left: auto;
+  justify-content: space-between;
+  border: 2px solid red;
+}
+
+.complete{
+  background-color: #CCE8CC
 }
 
 /*
