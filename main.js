@@ -2,7 +2,8 @@
 const form = document.querySelector("#form");
 const list = document.querySelector("#list");
 const newDo= document.querySelector("#newToDo");
-
+let listToDo = [];
+let index;
 const getRid = document.querySelector("#list");
 getRid.addEventListener("click", remove);
 
@@ -15,7 +16,7 @@ form.addEventListener("submit", addToList);
 function addToList(event){
   event.preventDefault();
 
-  let newBtn = document.createElement("button");
+  let newBtn = document.createElement("BUTTON");
   newBtn.textContent =" ";
   newBtn.className = "buttonList";
   list.appendChild(newBtn);
@@ -24,17 +25,22 @@ function addToList(event){
   newToDo.textContent = `${newDo.value}`;
   list.appendChild(newToDo);
 
+  listToDo.push(newBtn);
+  listToDo.push(newToDo);
+
   form.reset();
 }
 
 function remove(event){
-  console.log("hello");
+  index = listToDo.indexOf(event.target);
   if (event.target.nodeName != "BUTTON"){
+    console.log(index);
     event.target.remove();
+    listToDo[index-1].remove();
   }
-
   event.target.textContent = "✓";
   event.target.classList.add("complete");
+  listToDo[index+1].classList.add("complete");
 
 
 }
