@@ -3,6 +3,7 @@ const form = document.querySelector("#form");
 const list = document.querySelector("#list");
 const newDo= document.querySelector("#newToDo");
 const doneList = document.querySelector("#doneList");
+const emptyList = document.querySelector("#empty");
 let listToDo = [];
 let finishedToDo=[];
 let index;
@@ -15,11 +16,11 @@ removeIt.addEventListener("click", removeFinished);
 
 form.addEventListener("submit", addToList);
 
-
 //functions
 
 //adds a new to do to the list
 function addToList(event){
+
   event.preventDefault();
 
   let newBtn = document.createElement("BUTTON");
@@ -34,8 +35,6 @@ function addToList(event){
   listToDo.push(newBtn);
   listToDo.push(newToDo);
 
-  console.log(listToDo);
-
   form.reset();
 }
 
@@ -48,10 +47,9 @@ function deleteToDo(event){
   }
 
   else if (event.target.nodeName == "BUTTON"){
-    finishedToDo.push(event.target);
+    event.target.remove();
     finishedToDo.push(listToDo[index+1]);
 
-    doneList.appendChild(event.target);
     doneList.appendChild(listToDo[index+1]);
   }
 
@@ -65,6 +63,5 @@ function removeFinished(event) {
   index = finishedToDo.indexOf(event.target);
   if (event.target.nodeName == "LI"){
     event.target.remove();
-    finishedToDo[index-1].remove();
   }
 }
