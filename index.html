@@ -47,19 +47,35 @@ Todo List-->
     <main>
       <div id="app">
 
-        <h1>To Do List</h1>
+        <div class="title">
+          <img src="images/little blob.png" alt="artistic blob"/>
+          <h1>To Do List</h1>
+        </div>
 
-        <form id="form">
 
-          <label for="newToDo">Create new To Do</label>
-          <input type="text" id="newToDo" required="required"/>
+        <div class ="toComplete">
+
+          <form id="form">
+
+            <label for="newToDo">Create new To Do</label>
+
+            <div class = "formEntry">
+              <input type="text" id="newToDo" required="required"/>
+      
+              <button class="button" type="submit">Add</button>
+            </div>
+
+          </form>
+
+          <h2>To Do</h2>
+          <ul id="list"></ul>
+       </div>
         
-          <button class="button" type="submit">Add</button>
-        
-        </form>
 
-      <h3>To Do</h3>
-      <ul id="list"></ul>
+        <div class="finished">
+          <h3>Done</h3>
+          <ul id="done"></ul>
+        </div>
 
       </div>
     </main>

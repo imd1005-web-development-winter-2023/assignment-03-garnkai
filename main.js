@@ -5,6 +5,7 @@ const idkWhat = document.querySelector("#newToDo");
 
 form.addEventListener("submit", addToList);
 
+
 //functions
 
 //adds a new to do to the list
@@ -17,7 +18,6 @@ function addToList(event){
 
   form.reset();
 }
-
 
 
 // Variables
