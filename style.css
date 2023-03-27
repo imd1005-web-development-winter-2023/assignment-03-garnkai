@@ -1,7 +1,7 @@
 body {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: #1D1E18;
-  background-color: #CCE8CC;
+  color: #634433;
+  background-color: #b58a72;
 }
 
 .title{
@@ -40,6 +40,7 @@ main {
   margin-left: auto;
   margin-right: auto;
   background-color: #F6EFEE;
+  border: 5px solid #f6deda;
   border-radius: 2rem;
   padding: 3%;
 }
@@ -75,7 +76,7 @@ ul li{
   padding: 2%;
   border-radius: 6px;
   background-color: #E2B6CF;
-  border: 2px solid #dda3c4;
+  border: 2px solid #d97fb2;
   margin-top: -2.5rem;
   margin-bottom: 2rem;
 }
@@ -87,7 +88,7 @@ ul :hover{
 
 .buttonList {
   background-color: #E2B6CF;
-  border: 2px solid #dda3c4;
+  border: 2px solid #d97fb2;
   border-radius: 2px;
   margin-left: -2rem;
   width: 1.5rem;
@@ -104,11 +105,6 @@ ul :hover{
   justify-content: space-between;
 }
 
-.complete{
-  background-color: #CCE8CC
-}
-
-
 .completed{
   display:flex;
   flex-direction: column;
@@ -117,13 +113,18 @@ ul :hover{
   margin-top: 4rem;
   margin-left: auto;
   margin-right: auto;
-  background-color: #F6EFEE;
+  background-color: #bcf8c5;
+  border: 5px solid #9ad4a3;
   border-radius: 2rem;
   padding: 3%;
 }
 
+.completed h3{
+  font-size: 1.5rem;
+}
+
 .completed ul li{
-  border: 2px solid #dda3c4;
+  border: 2px solid #d97fb2;
   border-radius: 6px;
   justify-content: space-between;
   margin-right: auto;
