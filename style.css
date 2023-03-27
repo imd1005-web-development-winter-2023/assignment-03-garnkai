@@ -4,8 +4,12 @@ body {
   background-color: #b58a72;
 }
 
+.app{
+  width: min(100%, 500px);
+}
+
 .title{
-  width: 45%;
+  width: 73%;
   height: 10rem;
   margin-top: 2rem;
   margin-left: auto;
@@ -14,17 +18,30 @@ body {
 
 .title img{
   height:100%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
+  object-fit: fill;
 }
 
 .title h1{
   display:flex;
   width: 100%;
+  color:#634433;
+  font-size: 1.4rem;
   justify-content: center;
   position: relative;
   margin-top: -6.5rem;
+}
+
+@media screen and (min-width: 800px){
+  .title h1{
+    font-size: 1.6rem;
+  }
+
+  .title{
+    width: 50%;
+  }
 }
 
 main {
