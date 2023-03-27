@@ -1,44 +1,78 @@
-//
-//  JS File
-//  You may remove the code below - it's just boilerplate
-//
+//variables
+const form = document.querySelector("#form");
+const list = document.querySelector("#list");
+const newDo= document.querySelector("#newToDo");
+const doneList = document.querySelector("#doneList");
+let listToDo = [];
+let finishedToDo=[];
+let index;
 
-//
-// Variables
-//
+const getRid = document.querySelector("#list");
+const removeIt = document.querySelector("#doneList");
 
-// Constants
-const appID = "app";
-const headingText = "To do. To done. ✅";
+getRid.addEventListener("click", deleteToDo);
+removeIt.addEventListener("click", removeFinished);
 
-// Variables
+form.addEventListener("submit", addToList);
 
-// DOM Elements
-let appContainer = document.getElementById(appID);
+emptyList = document.createElement("P");
+emptyList.textContent = "Currently Nothing To Do ʕ·ᴥ·ʔ";
+list.appendChild(emptyList);
 
-//
-// Functions
-//
+emptyDone = document.createElement("P");
+emptyDone.textContent = "Currently Nothing Done ʕ ´•̥̥̥ ᴥ•̥̥̥`ʔ";
+doneList.appendChild(emptyDone);
 
-// Add a heading to the app container
-function inititialise() {
-  // If anything is wrong with the app container then end
-  if (!appContainer) {
-    console.error("Error: Could not find app contianer");
-    return;
-  }
+//functions
 
-  // Create an h1 and add it to our app
-  const h1 = document.createElement("h1");
-  h1.innerText = headingText;
-  appContainer.appendChild(h1);
+//adds a new to do to the list
+function addToList(event){
 
-  // Init complete
-  console.log("App successfully initialised");
+  emptyList.remove();
+
+  event.preventDefault();
+
+  let newBtn = document.createElement("BUTTON");
+  newBtn.textContent =" ";
+  newBtn.className = "buttonList";
+  list.appendChild(newBtn);
+
+  const newToDo = document.createElement("li");
+  newToDo.textContent = `${newDo.value}`;
+  list.appendChild(newToDo);
+
+  listToDo.push(newBtn);
+  listToDo.push(newToDo);
+
+  form.reset();
 }
 
-//
-// Inits & Event Listeners
-//
+function deleteToDo(event){
+  index = listToDo.indexOf(event.target);
 
-inititialise();
+  if (event.target.nodeName == "LI"){
+    event.target.remove();
+    listToDo[index-1].remove();
+  }
+
+  else if (event.target.nodeName == "BUTTON"){
+    emptyDone.remove();
+
+    event.target.remove();
+    finishedToDo.push(listToDo[index+1]);
+
+    doneList.appendChild(listToDo[index+1]);
+  }
+
+  else{
+    return;
+  }
+}
+
+
+function removeFinished(event) {
+  index = finishedToDo.indexOf(event.target);
+  if (event.target.nodeName == "LI"){
+    event.target.remove();
+  }
+}

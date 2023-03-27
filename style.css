@@ -1,42 +1,153 @@
-/*
-  CSS File
-*/
-
-/*
- VARIABLES
-*/
-:root {
-  /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
-  --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
-
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
-
-  /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
+body {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #634433;
+  background-color: #b58a72;
 }
 
-/*
-  PAGE / BODY
-*/
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
+.app{
+  width: min(100%, 500px);
+}
+
+.title{
+  width: 73%;
+  height: 10rem;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title img{
+  height:100%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: fill;
+}
+
+.title h1{
+  display:flex;
+  width: 100%;
+  color:#634433;
+  font-size: 1.4rem;
+  justify-content: center;
+  position: relative;
+  margin-top: -6.5rem;
+}
+
+@media screen and (min-width: 800px){
+  .title h1{
+    font-size: 1.6rem;
+  }
+
+  .title{
+    width: 50%;
+  }
 }
 
 main {
   min-height: 100vh;
+}
 
+.toComplete {
+  display:flex;
+  flex-direction: column;
+  width: 70%;
+  height: 60%;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #F6EFEE;
+  border: 5px solid #f6deda;
+  border-radius: 2rem;
+  padding: 3%;
+}
+
+.formEntry {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  color:#1D1E18;
+  flex-direction: row;
+  margin-bottom: 2rem;
+}
+
+.formEntry button{
+  margin-left: auto;
+  background-color: #E2B6CF;
+  border: 2px solid #dda3c4;
+  border-radius: 2px;
+}
+
+.formEntry input{
+  width: 80%;
+  background-color:#E2B6CF;
+  border: 2px solid #dda3c4;
+  border-radius: 2px;
+}
+
+ul{
+  margin-top: 1.3rem;
+  list-style-type: none;
+}
+
+ul li{
+  display: flex;
+  padding: 2%;
+  border-radius: 6px;
+  background-color: #E2B6CF;
+  border: 2px solid #d97fb2;
+  margin-top: -2.5rem;
+  margin-bottom: 2rem;
+}
+
+ul :hover{
+  text-decoration:line-through;
+  color: red;
+}
+
+.buttonList {
+  background-color: #E2B6CF;
+  border: 2px solid #d97fb2;
+  border-radius: 2px;
+  margin-left: -2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.buttonList:hover{
+  background-color: #d97fb2;
+}
+
+.body button{
+  display: flex;
+  margin-left: auto;
+  justify-content: space-between;
+}
+
+.completed{
+  display:flex;
+  flex-direction: column;
+  width: 70%;
+  height: 60%;
+  margin-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #bcf8c5;
+  border: 5px solid #9ad4a3;
+  border-radius: 2rem;
+  padding: 3%;
+}
+
+.completed h3{
+  font-size: 1.5rem;
+}
+
+.completed ul li{
+  border: 2px solid #d97fb2;
+  border-radius: 6px;
+  justify-content: space-between;
+  margin-right: auto;
+  margin: 1rem;
+  margin-left:-1.5rem;
+  
 }
 
 /*

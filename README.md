@@ -10,6 +10,8 @@
 
 **Assessment**: This assignment is worth 25% of your final grade and marked out of 100.
 
+https://imd1005-web-development-winter-2023.github.io/assignment-03-garnkai/
+
 ## Introduction
 
 Todo lists are like a "right of passage" in webdev tutorials. A simple Todo list app can be written in a couple dozen lines of code. There is, however, a huge opportunity for innovation, enhancements and features that can take this project from a learning opportunity to a showcase you put on a portfolio.
